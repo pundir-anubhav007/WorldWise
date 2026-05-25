@@ -1,8 +1,27 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom"
+import Product from "./Pages/Product"
+import Homepage from "./Pages/Homepage"
+import Pricing from "./Pages/Pricing"
+import AppLayout from './Pages/AppLayout'
+import Login from "./Pages/Login"
+import PageNotFound from "./Pages/PageNotFound";
+
+
 function App() {
 
   return (
-    <div>World Wise</div>
+<BrowserRouter>
+<Routes>
+<Route path="/" element={<Homepage/>} />
+<Route path="/app" element={<AppLayout/>} />
+<Route path="/login" element={<Login/>} />
+<Route path="product" element={<Product/>} />
+<Route path="pricing" element={<Pricing/>} />
+<Route path="*" element={<PageNotFound/>} />
+</Routes>
+</BrowserRouter>
   )
 }
+
 
 export default App
