@@ -10,17 +10,22 @@ import PageNotFound from "./Pages/PageNotFound";
 function App() {
 
   return (
-<BrowserRouter>
-<Routes>
-<Route path="/" element={<Homepage/>} />
-<Route path="/app" element={<AppLayout/>} />
-<Route path="/login" element={<Login/>} />
-<Route path="product" element={<Product/>} />
-<Route path="pricing" element={<Pricing/>} />
-<Route path="*" element={<PageNotFound/>} />
-</Routes>
-</BrowserRouter>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="app" element={<AppLayout />}>
+          <Route index element={<p>LIST OF CITIES</p>} />
+          <Route path="cities" element={<p>List of cities</p>} />
+          <Route path="countries" element={<p>List of countries</p>} />
+          <Route path="form" element={<p>Form Data </p>} />
+        </Route>
+        <Route path="login" element={<Login />} />
+        <Route path="product" element={<Product />} />
+        <Route path="pricing" element={<Pricing />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 
